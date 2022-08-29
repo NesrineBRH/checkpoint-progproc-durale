@@ -1,0 +1,73 @@
+/* -------------Algortithme avec procedure*/
+PROCEDURE Dot-product(VAR v2, v1:=ARRAY_OF Float[n])
+VAR
+p:=0;
+BEGIN
+  
+ For i FROM 1 TO n STEP 1 DO  
+ p:=v1[i]*v2[i]+p;
+ END_FOR
+
+END
+
+ALGORITHM scalar-product 
+VAR
+p:=0;
+m:=INTEGER;
+v1, v2, v3,vm:=ARRAY_OF Float[n]; 
+BEGIN
+
+ print('entrez m le nombre de vecteurs a controler');
+ read(m);
+ print('entrez vos m vecteurs et nommez vi (i indice du vecteur)');
+  read(v1);
+  read(v2);
+  read(v3);
+  /*until*/
+  read(vm);
+For i FROM 1 TO m STEP 1 DO 
+For j FROM i+1 TO m STEP 1 DO   
+  Dot-product(vi, vj);
+  IF (Dot-product(vi, vj)=0) THEN
+  print(vi 'et'vj 'sont orthogonaux');
+  END-IF
+ END_FOR
+END_FOR
+END
+
+/* -------------Algortithme avec function*/
+
+///////////////////
+FUNCTION Dot-product(v1,v2) : Float
+VAR    
+p:=0;
+BEGIN
+  
+ For i FROM 1 TO n STEP 1 DO  
+ p:=v1[i]*v2[i]+p;
+ END_FOR
+return p;
+END
+ALGORITHM scalar-product 
+VAR
+m:=INTEGER;
+v1, v2, v3,vm:=ARRAY_OF Float[n]; 
+BEGIN
+
+ print('entrez m le nombre de vecteurs a controler');
+ read(m);
+ print('entrez vos m vecteurs et nommez vi (i indice du vecteur)');
+  read(v1);
+  read(v2);
+  read(v3);
+  /*until*/
+  read(vm);
+For i FROM 1 TO m STEP 1 DO 
+For j FROM i+1 TO m STEP 1 DO   
+  Dot-product(vi, vj);
+  IF (Dot-product(vi, vj)=0) THEN
+  print(vi 'et'vj 'sont orthogonaux');
+  END-IF
+ END_FOR
+END_FOR
+END
